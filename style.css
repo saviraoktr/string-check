@@ -1,0 +1,211 @@
+/* Apply these settings to every element */
+*{ box-sizing: border-box; /* Include padding and borders in element width */
+    }
+
+/* Style the whole webpage */
+body{
+    margin: 0; /* the outer layer */
+    padding: 40px 20px; /* around the page content */
+    background: #f5f5f0;
+    color: #282b25;
+    font-family: Plus Jakarta Sans, sans-serif;
+}
+
+/* Limit the app's width and centre it */
+.app {
+    max-width: 1000px;
+    margin: auto; /* Center the app horizontally */
+}
+
+/* Style the small introductory lable */
+.eyebrow {
+    color: #647657;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Style the main heading */
+h1 {
+    margin: 12px 0;
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-size: 48px;
+    font-weight: normal;
+    letter-spacing: -1.5px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+/* Style the subtitle and section descriptions */
+.subtitle,
+.section-heading p {
+    color: #73756d;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Style the editor and workspace sections */
+.editor,
+.workspace{
+    margin-top: 28px;
+    padding: 24px;
+    border: 1px solid #e0e0d7; /* Add a thin border */
+    border-radius: 12px; /* Round the corners */
+    background: #fffefa;
+}
+
+/* Style all form labels */
+label{
+    display: block; /* Put each label on its own line */
+    margin: 18px 0 8px; /* Add space above and below labels */
+    font-size: 13px;
+    font-size: bold;
+}
+
+/* Style text inputs and multi-line text fields */
+input,
+textarea{
+    width: 100%; /*Fill the available width*/
+    padding: 12px;
+    border: 1px solid #deded5;
+    border-radius: 7px;
+    background: #fff;
+    color: #282b25;
+    font: inherit; /* Inherit the surrounding font */
+    font-size: 14px;
+}
+
+/* Set the height and resizing behavior of text areas */
+textarea{
+    min-height: 85px;
+    resize: vertical; /* Allow resizing vertically */
+}
+
+/* Change the appearance of a field when selected */
+input:focus,
+textarea:focus {
+    outline: 2px solid #dce5d4; /* Show a focus outline */
+    border-color: #647657;
+}
+
+/* Arrange language fields in three columns */
+.language-grid{
+    display: grid; /* Use CSS Grid layout */
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* Create 3 equal columns */
+    gap: 16px;
+}
+
+/* Style all buttons */
+button {
+    margin-top: 20px;
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 7px;
+    background: #354b36;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer; /* Show a pointer cursor on hover */
+}
+
+/* Change button appearance when the pointer hovers over it */
+button:hover {
+    opacity: 0.85;
+}
+
+/* Give secondary buttons a lighter appearance */
+button.secondary{
+    margin-top: 0;
+    background: #e8e9e1;
+    color: #292d26;
+}
+
+/* Arrange the workspace heading and button */
+.section-heading{
+    display: flex; /* Place children in a flexible layout */
+    align-items: center;
+    justify-content: space-between; /* Put space between the children */
+    gap: 16px;
+}
+
+/* Remove the bottom margin from section descriptions */
+.section-heading p{
+    margin-bottom: 0;
+}
+
+/* Add space above the translation list and results */
+#stringList,
+#result {
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+/* Style translation cards and issue cards*/
+.string-card,
+.issue-card {
+    margin-top: 12px;
+    padding: 16px;
+    border: 1px solid #e4e4dc;
+    border-radius: 8px;
+    overflow-wrap: anywhere; /* Allow long text to wrap */
+}
+
+/* Style headings inside cards */
+.string-card h3,
+.issue-card h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+}
+
+/* Style paragraphs inside cards */
+.string-card p,
+.issue-card p {
+    margin: 6px 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.translation-divider{
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 16px 0;
+}
+
+/* Style muted text */
+.muted {
+    color: #77796f;
+}
+
+/* Style missing-translation messages */
+.status-missing {
+    color: #a23d32;
+}
+
+/* Style warning messages */
+.status-warning{
+    color: #92641c;
+}
+
+/* Apply different layout rules on smaller screens */
+@media (max-width: 700px){
+
+    /* Stack language fields into one column */
+    .language-grid{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    /* Reduce section padding on smaller screens */
+    .editor,
+    .workspace {
+        padding: 18px;
+    }
+
+    /* Reduce the main heading size */
+    h1 {
+        font-size: 40px;
+    }
+}

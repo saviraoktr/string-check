@@ -1,0 +1,90 @@
+<!-- Tells the browser this doc uses HTML5-->
+<!DOCTYPE html>
+<!-- Starts the HTML doc and sets its language-->
+<html lang="en">
+
+<!-- Contains information about the webpage-->
+<head>
+    <!-- Allow the page to display common characters correctly-->
+    <meta charset="UTF-8">
+
+    <!-- Makes the layout adapt to the device's screen width-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sets the tittle shown in the browser tab-->
+    <title>String Check</title>
+
+    <!-- Connects this HTML file to the CSS file-->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!-- Contains the content displayed on the webpage-->
+<body>
+    <!-- Group the entire application-->
+    <div class="app">
+        <!--Groups the introductory content-->
+        <header>
+            <p class="eyebrow">LOCALIZATION WORKSPACE</p>
+            <h1>String Check</h1>
+            <p class="subtitle">Find missing translations and potential localization issues</p>
+        </header>
+
+        <!--Group the translation input fields-->
+        <section class="editor">
+            <h2>Add a translation</h2>
+            <label for="translationKey">Translation key</label>
+            <input id="translationKey" placeholder="e.g. welcome_message"/>
+
+            <!--Groups the fields for the different languages-->
+            <div class="language-grid">
+                <!--Group the fields for the different languages-->
+                <div>
+                    <!--Labels the English field-->
+                    <label for="english">English (source)</label>
+                    <textarea id="english" placeholder="Enter source text"></textarea>
+                </div>
+
+                 <div>
+                    <!--Labels the Spanish field-->
+                    <label for="spanish">Spanish</label>
+                    <textarea id="spanish" placeholder="Enter Spanish translation"></textarea>
+                </div>
+
+                 <div>
+                    <!--Labels the Indonesian field-->
+                    <label for="indonesian">Indonesian</label>
+                    <textarea id="indonesian" placeholder="Enter Indonesian text"></textarea>
+                </div>
+            </div>
+
+            <!--Creates a button for running localization checks-->
+            <button id="checkButton">Run checks</button>
+        </section>
+
+        <!--Groups the saved translations and checking results-->
+        <section class="workspace">
+            <!--Groups the section heading, count, and check button-->
+            <div class="section-heading">
+                <!--Groups the title and number of saved strings-->
+                <div>
+                    <!--Heading for the list of saved translations--> 
+                    <h2>Translation strings</h2>
+
+                    <!--Display the current number of saved strings-->
+                    <p id="stringCount">0 strings added</p>
+                </div>
+            </div>
+
+            <!--JavaScript will insert the saved translation entries here-->
+            <div id="stringList"></div>
+
+            <!--JavaScript will display the checking results here-->
+            <!--aria-live helps screen readers announce updates-->
+            <div id="result" aria-live="polite"></div>
+        </section>
+    </div>
+
+    <!--Connects this HTML file to the JavaScript file-->
+    <script src="script.js"></script>
+</body>
+</html>
